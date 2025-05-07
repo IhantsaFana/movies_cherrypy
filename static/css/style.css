@@ -1,0 +1,272 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .container {
+  background: #2c2c2c;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+#search-form {
+  flex-direction: row;
+  gap: 10px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  background: #fff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode input {
+  background: #444;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.toggle-dark-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+}
+
+.logout,
+.back-link,
+.favorites-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+body.dark-mode .logout,
+body.dark-mode .back-link,
+body.dark-mode .favorites-link {
+  color: #66b3ff;
+}
+
+.logout:hover,
+.back-link:hover,
+.favorites-link:hover {
+  text-decoration: underline;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+  cursor: pointer;
+}
+
+.movie-card:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+body.dark-mode .movie-card {
+  background: #333;
+}
+
+.movie-card:hover,
+.movie-card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+.movie-card p {
+  margin: 0 10px 10px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+body.dark-mode .movie-card p {
+  color: #bbb;
+}
+
+.movie-detail {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.movie-poster {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info {
+  flex: 1;
+}
+
+.movie-info p {
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+.movie-info strong {
+  color: #007bff;
+}
+
+body.dark-mode .movie-info strong {
+  color: #66b3ff;
+}
+
+.favorite-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffca28;
+  color: #333;
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+
+.favorite-btn:hover {
+  background-color: #ffb300;
+}
+
+body.dark-mode .favorite-btn {
+  background-color: #ffeb3b;
+  color: #1a1a1a;
+}
+
+.favorite-btn .favorite-icon {
+  font-size: 1.2em;
+}
+
+.trailer {
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.trailer iframe {
+  border-radius: 8px;
+}
+
+p#message {
+  color: #d32f2f;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+body.dark-mode p#message {
+  color: #ff6666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  #search-form {
+    flex-direction: column;
+  }
+  .movie-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie-poster {
+    max-width: 100%;
+  }
+  .trailer iframe {
+    height: 200px;
+  }
+}

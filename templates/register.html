@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription - MovieApp</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/app.js" defer></script>
+  </head>
+  <body>
+    <button
+      id="toggle-dark-mode"
+      class="toggle-dark-mode"
+      aria-label="Basculer le mode sombre"
+    >
+      Mode Sombre
+    </button>
+    <div class="container">
+      <h1>Inscription</h1>
+      <form id="register-form" aria-labelledby="register-heading">
+        <label for="username">Nom d'utilisateur</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Nom d'utilisateur"
+          required
+          aria-required="true"
+        />
+        <label for="password">Mot de passe</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Mot de passe"
+          required
+          aria-required="true"
+        />
+        <button type="submit">S'inscrire</button>
+      </form>
+      <p id="message" role="alert"></p>
+      <a href="/login">Déjà un compte ? Se connecter</a>
+    </div>
+  </body>
+</html>

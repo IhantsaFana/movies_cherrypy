@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion - MovieApp</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/app.js" defer></script>
+  </head>
+  <body>
+    <button
+      id="toggle-dark-mode"
+      class="toggle-dark-mode"
+      aria-label="Basculer le mode sombre"
+    >
+      Mode Sombre
+    </button>
+    <div class="container">
+      <h1>Connexion</h1>
+      <form id="login-form" aria-labelledby="login-heading">
+        <label for="username">Nom d'utilisateur</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Nom d'utilisateur"
+          required
+          aria-required="true"
+        />
+        <label for="password">Mot de passe</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Mot de passe"
+          required
+          aria-required="true"
+        />
+        <button type="submit">Se connecter</button>
+      </form>
+      <p id="message" role="alert"></p>
+      <a href="/register">Pas de compte ? S'inscrire</a>
+    </div>
+  </body>
+</html>

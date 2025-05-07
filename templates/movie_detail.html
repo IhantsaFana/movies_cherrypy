@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - MovieApp</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/app.js" defer></script>
+  </head>
+  <body>
+    <button
+      id="toggle-dark-mode"
+      class="toggle-dark-mode"
+      aria-label="Basculer le mode sombre"
+    >
+      Mode Sombre
+    </button>
+    <div class="container">
+      <header>
+        <h1>{title}</h1>
+        <nav aria-label="Navigation principale">
+          <a href="/" class="back-link" aria-label="Retour à la liste des films"
+            >Retour aux films</a
+          >
+          <a
+            href="/favorites"
+            class="favorites-link"
+            aria-label="Voir mes films favoris"
+            >Mes favoris</a
+          >
+          <a href="/logout" class="logout" aria-label="Se déconnecter"
+            >Se déconnecter</a
+          >
+        </nav>
+      </header>
+      <div class="movie-detail" role="region" aria-live="polite">
+        <img
+          src="https://image.tmdb.org/t/p/w500{poster_path}"
+          alt="{alt_description}"
+          class="movie-poster"
+          loading="lazy"
+        />
+        <div class="movie-info">
+          <p><strong>Date de sortie :</strong> {release_date}</p>
+          <p><strong>Note :</strong> {vote_average}/10</p>
+          <p><strong>Genres :</strong> {genres}</p>
+          <p><strong>Acteurs principaux :</strong> {cast}</p>
+          <p><strong>Réalisateur :</strong> {director}</p>
+          <p><strong>Synopsis :</strong> {overview}</p>
+          <button
+            id="favorite-btn"
+            class="favorite-btn"
+            data-movie-id="{movie_id}"
+            data-is-favorite="{is_favorite}"
+            aria-label="{favorite_aria_label}"
+          >
+            <span class="favorite-icon">{favorite_icon}</span> Favori
+          </button>
+          {trailer_html}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes Favoris - MovieApp</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/app.js" defer></script>
+  </head>
+  <body>
+    <button
+      id="toggle-dark-mode"
+      class="toggle-dark-mode"
+      aria-label="Basculer le mode sombre"
+    >
+      Mode Sombre
+    </button>
+    <div class="container">
+      <header>
+        <h1>Mes Films Favoris</h1>
+        <nav aria-label="Navigation principale">
+          <a href="/" class="back-link" aria-label="Retour à la liste des films"
+            >Retour aux films</a
+          >
+          <a href="/logout" class="logout" aria-label="Se déconnecter"
+            >Se déconnecter</a
+          >
+        </nav>
+      </header>
+      <div id="favorites" class="movies-grid" role="region" aria-live="polite">
+        {favorites_content}
+      </div>
+    </div>
+  </body>
+</html>

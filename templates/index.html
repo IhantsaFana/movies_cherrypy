@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieApp - Films</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/app.js" defer></script>
+  </head>
+  <body>
+    <button
+      id="toggle-dark-mode"
+      class="toggle-dark-mode"
+      aria-label="Basculer le mode sombre"
+    >
+      Mode Sombre
+    </button>
+    <div class="container">
+      <header>
+        <h1>Bienvenue sur MovieApp</h1>
+        <form id="search-form" aria-label="Rechercher des films">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Rechercher un film..."
+            aria-label="Rechercher un film"
+          />
+          <button type="submit" aria-label="Lancer la recherche">
+            Rechercher
+          </button>
+        </form>
+        <a href="/logout" class="logout">Se déconnecter</a>
+      </header>
+      <div
+        id="movies"
+        class="movies-grid"
+        role="region"
+        aria-live="polite"
+      ></div>
+    </div>
+  </body>
+</html>
